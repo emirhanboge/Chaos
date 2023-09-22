@@ -33,7 +33,6 @@ The following parameters in `fire_spread.py` can be modified to adjust the simul
 - `IS_RAINING`: Boolean to check if it's raining.
 - `RAINING_INTENSITY`: Intensity of the rain.
 - `RAIN_DURATION`: Duration of rain in time steps.
-- `RAIN_MOD`: Modifies the possibility of rain occurring.
 
 ## Visualization Key
 
