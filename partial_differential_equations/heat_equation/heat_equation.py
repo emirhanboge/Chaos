@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import imageio
 
+import sympy as sp
+
 alpha = 0.05
 dx = 0.05 # Using a smaller dx for 3D simulation
 dt = 0.5 * dx**2 / alpha
@@ -124,8 +126,29 @@ def run_simulation_3d():
     create_gif(images, 'assets/heat_3d.gif')
     remove_temp_files()
 
+def equation_to_image(eq, filename):
+    fig, ax = plt.subplots()
+    ax.text(0.5, 0.5, f"${sp.latex(eq)}$", size=20, ha="center", va="center")
+    ax.axis("off")
+    fig.savefig(filename, bbox_inches='tight', pad_inches=0.1)
+    plt.close(fig)
+
+def generate_and_save_equation():
+    x, y, z, t, alpha = sp.symbols('x y z t alpha')
+
+    u = sp.Function('u')
+
+    heat_eq_1d = sp.Eq(sp.Derivative(u(x,t), t), alpha * sp.Derivative(u(x,t), x, x))
+    heat_eq_2d = sp.Eq(sp.Derivative(u(x,y,t), t), alpha * (sp.Derivative(u(x,y,t), x, x) + sp.Derivative(u(x,y,t), y, y)))
+    heat_eq_3d = sp.Eq(sp.Derivative(u(x,y,z,t), t), alpha * (sp.Derivative(u(x,y,z,t), x, x) + sp.Derivative(u(x,y,z,t), y, y) + sp.Derivative(u(x,y,z,t), z, z)))
+
+    equation_to_image(heat_eq_1d, 'assets/heat_eq_1d.png')
+    equation_to_image(heat_eq_2d, 'assets/heat_eq_2d.png')
+    equation_to_image(heat_eq_3d, 'assets/heat_eq_3d.png')
+
 if __name__ == "__main__":
-    run_simulation_1d()
-    run_simulation_2d()
-    run_simulation_3d()
+#    run_simulation_1d()
+#    run_simulation_2d()
+#    run_simulation_3d()
+    generate_and_save_equation()
 
