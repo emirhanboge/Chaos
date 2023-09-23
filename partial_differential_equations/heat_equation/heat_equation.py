@@ -154,8 +154,8 @@ def generate_and_save_equation():
     equation_to_image(stability_criterion, 'assets/stability_criterion.png')
 
 if __name__ == "__main__":
-#   run_simulation_1d()
-#    run_simulation_2d()
-#    run_simulation_3d()
+    run_simulation_1d()
+    run_simulation_2d()
+    run_simulation_3d()
     generate_and_save_equation()
 
