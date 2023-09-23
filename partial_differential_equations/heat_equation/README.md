@@ -6,7 +6,7 @@ This repository contains simulations of the heat equation in 1D, 2D, and 3D.
 
 The 1D heat equation is described by:
 
-![1D Equation](https://latex.codecogs.com/svg.latex?\bg_white&\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\frac{\partial^2&space;u}{\partial&space;x^2})
+![1D Equation](https://latex.codecogs.com/svg.latex?\bg_white\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2})
 
 Here is the simulation result:
 
@@ -16,7 +16,7 @@ Here is the simulation result:
 
 The 2D heat equation is described by:
 
-![2D Equation](https://latex.codecogs.com/svg.latex?\bg_white&\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\left(&space;\frac{\partial^2&space;u}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;y^2}&space;\right))
+![2D Equation](https://latex.codecogs.com/svg.latex?\bg_white\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right))
 
 Here is the simulation result:
 
@@ -26,7 +26,7 @@ Here is the simulation result:
 
 The 3D heat equation is described by:
 
-![3D Equation](https://latex.codecogs.com/svg.latex?\bg_white&\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\left(&space;\frac{\partial^2&space;u}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;z^2}&space;\right))
+![3D Equation](https://latex.codecogs.com/svg.latex?\bg_white\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right))
 
 Here is the simulation result:
 
@@ -36,7 +36,7 @@ Here is the simulation result:
 
 We've employed the explicit finite difference method to numerically solve the heat equation. The stability of the simulations is maintained by adhering to the criterion:
 
-![Stability Criterion](https://latex.codecogs.com/svg.latex?\bg_white&\alpha&space;\frac{dt}{{dx}^2}&space;\leq&space;0.5)
+![Stability Criterion](https://latex.codecogs.com/svg.latex?\bg_white\alpha \frac{dt}{{dx}^2} \leq 0.5)
 
 Where:
 - \( \alpha \) is the diffusivity coefficient.
