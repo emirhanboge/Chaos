@@ -134,20 +134,27 @@ def equation_to_image(eq, filename):
     plt.close(fig)
 
 def generate_and_save_equation():
-    x, y, z, t, alpha = sp.symbols('x y z t alpha')
-
+    x, y, z, t, alpha, dx, dt = sp.symbols('x y z t alpha dx dt')
     u = sp.Function('u')
 
+    # 1D heat equation
     heat_eq_1d = sp.Eq(sp.Derivative(u(x,t), t), alpha * sp.Derivative(u(x,t), x, x))
-    heat_eq_2d = sp.Eq(sp.Derivative(u(x,y,t), t), alpha * (sp.Derivative(u(x,y,t), x, x) + sp.Derivative(u(x,y,t), y, y)))
-    heat_eq_3d = sp.Eq(sp.Derivative(u(x,y,z,t), t), alpha * (sp.Derivative(u(x,y,z,t), x, x) + sp.Derivative(u(x,y,z,t), y, y) + sp.Derivative(u(x,y,z,t), z, z)))
-
     equation_to_image(heat_eq_1d, 'assets/heat_eq_1d.png')
+
+    # 2D heat equation
+    heat_eq_2d = sp.Eq(sp.Derivative(u(x,y,t), t), alpha * (sp.Derivative(u(x,y,t), x, x) + sp.Derivative(u(x,y,t), y, y)))
     equation_to_image(heat_eq_2d, 'assets/heat_eq_2d.png')
+
+    # 3D heat equation
+    heat_eq_3d = sp.Eq(sp.Derivative(u(x,y,z,t), t), alpha * (sp.Derivative(u(x,y,z,t), x, x) + sp.Derivative(u(x,y,z,t), y, y) + sp.Derivative(u(x,y,z,t), z, z)))
     equation_to_image(heat_eq_3d, 'assets/heat_eq_3d.png')
 
+    # Stability criterion
+    stability_criterion = sp.Eq(alpha * dt / dx**2, 0.5)
+    equation_to_image(stability_criterion, 'assets/stability_criterion.png')
+
 if __name__ == "__main__":
-#    run_simulation_1d()
+#   run_simulation_1d()
 #    run_simulation_2d()
 #    run_simulation_3d()
     generate_and_save_equation()
