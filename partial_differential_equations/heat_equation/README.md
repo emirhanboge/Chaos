@@ -1,38 +1,42 @@
 # Heat Equation Simulations
 
-This repository contains simulations of the heat equation in 1D, 2D, and 3D. We've used the finite difference method to solve and visualize the propagation of heat over time.
+This repository contains simulations of the heat equation in 1D, 2D, and 3D.
 
-## 1D Heat Equation Simulation
+## 1D Heat Equation
 
-The 1D heat equation is modeled with the following initial condition:
+The 1D heat equation is described by:
 
-\[ u(x, 0) = e^{-40(x-0.5)^2} \]
+![1D Equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\frac{\partial^2&space;u}{\partial&space;x^2})
 
-![1D Heat Equation Simulation](assets/heat_1d.gif)
+Here is the simulation result:
 
-## 2D Heat Equation Simulation
+![1D Simulation](assets/heat_1d.gif)
 
-For the 2D heat equation, the initial condition is:
+## 2D Heat Equation
 
-\[ u(x, y, 0) = \sin(\pi x) \sin(\pi y) \]
+The 2D heat equation is described by:
 
-![2D Heat Equation Simulation](assets/heat_2d.gif)
+![2D Equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\left(&space;\frac{\partial^2&space;u}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;y^2}&space;\right))
 
-## 3D Heat Equation Simulation
+Here is the simulation result:
 
-The 3D heat equation uses this initial condition:
+![2D Simulation](assets/heat_2d.gif)
 
-\[ u(x, y, z, 0) = \sin(\pi x) \sin(\pi y) \sin(\pi z) \]
+## 3D Heat Equation
 
-Here, we are visualizing slices of the 3D domain at positions z = 0.2, 0.5, and 0.8.
+The 3D heat equation is described by:
 
-![3D Heat Equation Simulation](assets/heat_3d.gif)
+![3D Equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;u}{\partial&space;t}&space;=&space;\alpha&space;\left(&space;\frac{\partial^2&space;u}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2&space;u}{\partial&space;z^2}&space;\right))
+
+Here is the simulation result:
+
+![3D Simulation](assets/heat_3d.gif)
 
 ## Methodology
 
 We've employed the explicit finite difference method to numerically solve the heat equation. The stability of the simulations is maintained by adhering to the criterion:
 
-\[ \alpha \frac{dt}{{dx}^2} \leq 0.5 \]
+![Stability Criterion](https://latex.codecogs.com/svg.latex?\alpha&space;\frac{dt}{{dx}^2}&space;\leq&space;0.5)
 
 Where:
 - \( \alpha \) is the diffusivity coefficient.
